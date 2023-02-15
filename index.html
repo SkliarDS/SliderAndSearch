@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CALCULATOR</title>
+        <link rel="import" href="./../page/page.html" />
+        <style>
+            #tabs ul {
+                list-style: none;
+                display: flex;
+                width: 200px;
+                justify-content: space-between;
+            }
+            #tabs ul li.active {
+                background-color: aqua;
+            }
+            .container {
+                max-width: 520px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .slider {
+                margin-bottom: 50px;
+            }
+            .slider__images {
+                margin-bottom: 20px;
+            }
+            .slider__slide {
+                display: none;
+                width: 100%;
+            }
+            .slider__slide.active {
+                display: block;
+                animation: animSlide .5s linear;
+            }
+            @keyframes animSlide {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            .slider__controls {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .slider__dots  {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .slider__btn {
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            .dot {
+                cursor: pointer;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: bisque;
+            }
+            .dot.active {
+                background-color: aquamarine;
+            }
+            .dot:not(:last-child) {
+                margin-right: 10px;
+            }
+            .dot.active {
+                background-color: aquamarine;
+            }
+            .list li.hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <section class="slider">
+                <div class="slider__images">
+                    <img class='slider__slide active' src='./img/services_img_2.jpg' alt=''>
+                    <img class='slider__slide' src='./img/services_img_1.jpg' alt=''>
+                    <img class='slider__slide' src='./img/services_img_3.jpg' alt=''>
+                    <img class='slider__slide' src='./img/services_img_4.jpg' alt=''>
+                </div>
+                <div class="slider__dots"></div>
+                <div class="slider__controls">
+                    <button class="slider__btn" data-btn="prev">Назад</button>
+                    <button class="slider__btn" data-btn="next">Вперед</button>
+                </div>
+            </section>            
+            <br>
+            <br>
+            <div class="search">
+                <input type="text" name="" id="search" autocomplete="off">
+                <ul class="list">
+                    <li>погода</li>
+                    <li>gold погода</li>
+                    <li>климат</li>
+                    <li>Зерно</li>
+                    <li>уроки на дому</li>
+                    <li>погода</li>
+                    <li>gold метро</li>
+                </ul>
+            </div>
+        </div>
+       
+        <script src="./index.js"></script>
+        <!-- <script src="./main.js"></script> -->
+    </body>
+</html>
