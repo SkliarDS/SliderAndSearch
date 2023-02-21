@@ -77,28 +77,6 @@ sliderMy.showSlide();
 sliderMy.showDots();
 
 
-const searcBlocks = document.querySelectorAll('.search');
-searcBlocks.forEach(searchBlock => {
-    const search = searchBlock.querySelector('#search');
-    const listItems = searchBlock.querySelectorAll('.list li');
-
-    search.addEventListener('keyup', function(){
-        let searchText = search.value.trim().toLowerCase();
-        listItems.forEach(item => {
-            let text = item.textContent.toLowerCase();
-            if(searchText !== ''){
-                if(text.search(searchText) == -1){
-                    item.classList.add('hide');
-                } else {
-                    item.classList.remove('hide');
-                }
-            } else {
-                item.classList.remove('hide');
-            }
-
-        });
-    });
-});
 
 
 

@@ -5,79 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CALCULATOR</title>
+        <link rel="stylesheet" href="https://sds1101.ru/reset.css">
+        <link rel="stylesheet" href="./main.css">
         <link rel="import" href="./../page/page.html" />
         <style>
-            #tabs ul {
-                list-style: none;
-                display: flex;
-                width: 200px;
-                justify-content: space-between;
-            }
-            #tabs ul li.active {
-                background-color: aqua;
-            }
-            .container {
-                max-width: 520px;
-                padding-left: 20px;
-                padding-right: 20px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .slider {
-                margin-bottom: 50px;
-            }
-            .slider__images {
-                margin-bottom: 20px;
-            }
-            .slider__slide {
-                display: none;
-                width: 100%;
-            }
-            .slider__slide.active {
-                display: block;
-                animation: animSlide .5s linear;
-            }
-            @keyframes animSlide {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
-            .slider__controls {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .slider__dots  {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .slider__btn {
-                margin-right: 20px;
-                cursor: pointer;
-            }
-            .dot {
-                cursor: pointer;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background-color: bisque;
-            }
-            .dot.active {
-                background-color: aquamarine;
-            }
-            .dot:not(:last-child) {
-                margin-right: 10px;
-            }
-            .dot.active {
-                background-color: aquamarine;
-            }
-            .list li.hide {
-                display: none;
-            }
+           
         </style>
     </head>
     <body>
@@ -97,21 +29,43 @@
             </section>            
             <br>
             <br>
-            <div class="search">
-                <input type="text" name="" id="search" autocomplete="off">
-                <ul class="list">
-                    <li>погода</li>
-                    <li>gold погода</li>
-                    <li>климат</li>
-                    <li>Зерно</li>
-                    <li>уроки на дому</li>
-                    <li>погода</li>
-                    <li>gold метро</li>
-                </ul>
+            <!-- Selector с поиском -->
+            <div class="dropdown-search">
+                <button type="button" class="dropdown-search__button">Выбрать салон</button>
+                <div class="dropdown-search__holder">
+                    <div class="dropdown-search__body list-scrollbar">
+                        <label class="dropdown-search__block-field">
+                            <input class="dropdown-search__search-field" type="text" name="" id="" autocomplete="off" placeholder="Быстрый поиск">
+                        </label>
+                        <ul class="dropdown-search__list">
+                            <li class="dropdown-search__gruop-item">Москва и МО</li>
+                                <!-- option -->
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Арбат"><i>Gold</i> Арбат</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Новая Рига"><i>Gold</i> Новая Рига</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Осташковское"><i>Gold</i> Осташковское</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Рублевка"><i>Gold</i> Рублевка</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Смоленская"><i>Gold</i> Смоленская</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="gold погода"><i>Gold</i> Дмитровка Каштановая Роща</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Мневники">Мневники</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Анохина">Анохина</li>
+                                <!-- option end -->
+                            <li class="dropdown-search__gruop-item">Регионы</li>
+                                <!-- option -->
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Арбат">Ростов</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Новая Рига">Воронеж</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Осташковское">Волгоград</li>
+                                <li title="Выбрать" class="dropdown-search__item"data-value="Gold Рублевка">Астрахань</li>                       
+                            <!-- option end -->
+                        </ul>
+                        <input type="text" name="выбранный элемент" value="" class="dropdown-search__input-hidden">
+                    </div>
+                </div>
             </div>
+            <!-- Selector с поиском end -->
         </div>
        
         <script src="./index.js"></script>
+        <script src="./searh.js"></script>
         <!-- <script src="./main.js"></script> -->
     </body>
 </html>
